@@ -1,0 +1,31 @@
+version: '3'
+services:
+  
+  lara-app:
+    build:
+      context: ./
+      dockerfile: ./docker-compose/Dockerfile
+    image: php:8.1.7-fpm-alpine
+    container_name: lara-app
+    restart: unless-stopped
+    tty: true
+    working_dir: /var/www
+    networks:
+       - lara-network
+
+  lara-nginx:
+    image: nginx:alpine
+    container_name: lara-nginx
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./public:/var/www/public            
+      - ./docker-compose/nginx/:/etc/nginx/conf.d/
+    networks:
+      - lara-network
+
+networks:
+  lara-network:
+    driver: bridge
