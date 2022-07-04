@@ -36,7 +36,7 @@
 #### 7. If all steps completed successfully, follow next link "http://127.0.0.1:8000" to check laravel-app web interface working. ####   
 
 ***
-### Run Laravel app with nginx - php-fpm chain in docker-compose container  ###
+### Run Laravel app with nginx - php-fpm chain with docker-compose  ###
 ***
 
 #### 1. Clone app-repository to your Pc ####
