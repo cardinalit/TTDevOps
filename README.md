@@ -143,3 +143,19 @@ docker build -t myapp .
 docker run -d -p 8000:8000 myapp
 ```
 5. Откройте браузер в введите в адресной строке `localhost:8000`
+
+
+## Запуск Сервиса Docker-compose
+1. Клонируйте [репозиторий проекта](https://github.com/cardinalit/TTDevOps) к себе на компьютер.
+```
+git clone https://github.com/cardinalit/TTDevOps.git   
+```
+2. Перейдите в папку с проектом.
+```
+cd TTDevOps
+```
+3. Выполните команду
+```
+docker-compose up
+```
+4. Откройте браузер в введите в адресной строке `localhost:8000`

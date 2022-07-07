@@ -8,7 +8,7 @@ FROM php:8.1.7-fpm
   RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
   RUN docker-php-ext-install mbstring exif pcntl bcmath gd
-  
+
   RUN groupadd -r php && useradd -r -g php php
   WORKDIR /var/www/
   COPY . /var/www/
@@ -27,5 +27,6 @@ FROM php:8.1.7-fpm
 
   RUN composer install
   RUN php artisan key:generate
-
+  EXPOSE 9000
+  
   CMD php-fpm

@@ -11,8 +11,6 @@ services:
 
   myapp:
     build: .
-    volumes:
-     - ./:/var/www
     networks:
      - mynet
 
