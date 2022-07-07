@@ -43,7 +43,7 @@ docker-compose up -d
 ```
 
 ### Result
-Try to open [http//:127.0.0.1:8000](http//:127.0.0.1:8000)
+Try to open [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 ### Contact
 Aleksandr Karabchevskiy - pipetky@gmail.com
