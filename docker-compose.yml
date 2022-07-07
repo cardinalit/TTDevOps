@@ -1,0 +1,20 @@
+services:
+  nginx:
+    image: nginx
+    ports:
+     - "8000:8000"
+    volumes:
+     - ./:/var/www
+     - ./nginx/:/etc/nginx/conf.d
+    networks:
+     - mynet
+
+  myapp:
+    build: .
+    networks:
+     - mynet
+
+
+networks:
+   mynet:
+     driver: bridge
