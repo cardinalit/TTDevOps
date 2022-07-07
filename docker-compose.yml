@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  ttdevops:
+    restart: always
+    build:
+      context: .
+      dockerfile: extra.Dockerfile
+    networks:
+      - ttdevops_net
+
+  nginx:
+    restart: always
+    image: "nginx:latest"
+    networks:
+      - ttdevops_net
+    ports:
+    - "8000:8000"
+    volumes:
+      - ./ttdevops.conf:/etc/nginx/conf.d/ttdevops.conf
+      - ./public:/var/www/ttdevops/public
+      - ./resources:/var/www/ttdevops/resources
+
+networks:
+  ttdevops_net:
