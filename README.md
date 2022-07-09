@@ -15,7 +15,7 @@
 ```docker images | grep ttdevops```
 
 ***Пример вывода:***
-```ttdevops              latest                              d320de10d11f   55 minutes ago   627MB```
+```ttdevops              latest                              d320de10d11f   55 minutes ago   585MB```
 
 ## Запуск приложения в Docker контейнере
 
