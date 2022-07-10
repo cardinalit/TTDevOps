@@ -1,0 +1,23 @@
+version: "3.7"
+services:
+  nginx:
+    image: nginx:1.23.0-alpine
+    ports:
+     - "8000:8000"
+    volumes:
+     - ./:/var/www
+     - ./nginx/:/etc/nginx/conf.d
+    networks:
+     - ttdevops
+
+  ttdevops:
+    build:
+      context: ./
+      dockerfile: Dockerfile-fpm
+    networks:
+     - ttdevops
+
+
+networks:
+   ttdevops:
+     driver: bridge

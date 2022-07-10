@@ -15,7 +15,7 @@
 ```docker images | grep ttdevops```
 
 ***Пример вывода:***
-```ttdevops              latest                              d320de10d11f   55 minutes ago   627MB```
+```ttdevops              latest                              d320de10d11f   55 minutes ago   585MB```
 
 ## Запуск приложения в Docker контейнере
 
@@ -27,4 +27,16 @@
 * ключ -d запустит контейнер в фоновом режиме;
 * ttdevops - имя используемого образа;
   
+Запущенное приложение будет доступно по адресу [http://localhost:8000](http://localhost:8000)
+
+## Запуск приложения c помощью docker-compose 
+
+Для запуска приложения необходимо установить docker-compose в соответствие с официальной документацией: [install docker-compose](https://docs.docker.com/compose/install/)
+
+После установки **docker-compose** необходимо в корне проекта выполнить команду: 
+
+```docker-compose up -d```
+
+* ключ -d запустит контейнеры в фоновом режиме;
+
 Запущенное приложение будет доступно по адресу [http://localhost:8000](http://localhost:8000)

@@ -1,4 +1,5 @@
-FROM php:8.1
+FROM php:8.1.7-fpm
+
 RUN apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y \
@@ -10,12 +11,11 @@ RUN apt-get update \
 
 RUN curl -sS https://getcomposer.org/installer -o composer-setup.php \
     && php composer-setup.php --install-dir=/usr/local/bin --filename=composer 
-
-RUN chmod -R 777 /var/www/
+    
+COPY  . /var/www
 WORKDIR /var/www
-COPY . /var/www
 RUN chmod -R 777 /var/www/
 RUN mv .env.example .env
 RUN composer install
 RUN php artisan key:generate
-CMD ["php", "artisan", "serve", "--host=0.0.0.0"]
+CMD ["php-fpm"]
