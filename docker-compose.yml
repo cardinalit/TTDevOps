@@ -1,0 +1,21 @@
+---
+version: '3.9'
+
+services:
+    php:
+        build:
+            context: .
+        container_name: php_fpm
+        env_file:
+            - .env.example
+
+    nginx:
+        image: nginx:mainline-alpine
+        container_name: nginx_proxy
+        volumes:
+            - ./public:/srv/app/public
+            - ./nginx.conf:/etc/nginx/nginx.conf:ro
+        links:
+            - php
+        ports:
+            - "8000:8000"
